@@ -1,0 +1,28 @@
+#include<iostream>
+#include"ArregloDePersonas.h"
+using namespace std;
+int main(){
+    Persona persona1("juan","villalobos",18);
+    Persona persona2("jose","baños",17);
+    Persona persona3("nayeli","romero",15);
+    Persona arreglo[]={persona1,persona2};
+    ArregloDePersonas personas(arreglo,2);
+    cout<<endl<<personas.getsize();
+    personas.pushback(Persona("claudia","hito",16));
+    cout<<endl<<personas.getsize()<<endl;
+    for(int i=0;i<personas.getsize();i++)
+        cout<<personas.persona[i].getapellido()<<endl;
+    personas.insert(0,persona3);
+    cout<<endl<<personas.getsize();
+    for(int j=0;j<personas.getsize();j++)
+        cout<<personas.persona[j].getapellido()<<endl;
+    personas.remove(2);
+    for(int k=0;k<personas.getsize();k++)
+        cout<<personas.persona[k].getapellido()<<endl;
+    cout<<personas.getsize();
+    personas.clear();
+    for(int l=0;l<4;l++)
+        cout<<personas.persona[l].getapellido()<<endl;
+    cout<<personas.getsize();
+    return 0;
+}
